@@ -1,0 +1,5 @@
+extends: './.eslintrc.base.yml'
+
+rules:
+  no-console:                  # Allow use of console
+    - off

@@ -1,0 +1,80 @@
+extends: ['eslint:recommended', 'plugin:react/recommended']
+
+parser: 'babel-eslint'
+
+env:
+  browser: true
+  es6: true
+  node: true
+
+parserOptions:
+  ecmaVersion: 6
+  ecmaFeatures:
+    jsx: true
+  sourceType: 'module'
+
+plugins: [
+  'react'
+]
+
+globals:
+  DEVELOPMENT: false
+  PRODUCTION: false
+  $: false
+
+rules:
+  camelcase:                   # Enforce camelcase naming convention
+    - error
+  curly:                       # Enforce consistent indentation
+    - error
+  default-case:                # Require default case in switch statements
+    - error
+  eqeqeq:                      # Require === and !==
+    - error
+  eol-last:                    # Require or disallow newline at the end of files
+    - error
+  indent:                      # Require following curly brace conventions
+    - error
+    - 2
+    - SwitchCase: 1
+  linebreak-style:             # Enforce consistent linebreak style
+    - error
+    - unix
+  no-cond-assign:              # Disallow assignment operators in conditional statements
+    - error
+  no-constant-condition:       # Disallow constant expressions in conditions
+    - error
+  no-control-regex:            # Disallow control characters in regular expressions
+    - off
+  no-duplicate-case:           # Rule to disallow a duplicate case label
+    - error
+  no-else-return:              # Disallow return before else
+    - error
+  no-empty:                    # Disallow empty block statements
+    - error
+  no-multiple-empty-lines: [error, {
+    max: 1,                    # `max` enforces a maximum number of consecutive empty lines
+    maxBOF: 0,                 # `maxBOF` enforces a maximum number of consecutive empty lines at the beginning of files
+    maxEOF: 0                  # `maxEOF` enforces a maximum number of consecutive empty lines at the end of files
+  }]
+  no-undef:                    # Disallow Undeclared Variables
+    - error
+  no-unused-vars:              # Disallow Unused Variables
+    - error
+  no-var:                      # Require `let` or `const` instead of `var
+    - error
+  object-curly-spacing:        # Enforce consistent spacing inside braces
+    - error
+    - never
+  quotes:                      # Enforce the consistent use of either backticks, double, or single quotes
+    - error
+    - single
+  semi:                        # Require or disallow semicolons instead of ASI
+    - error
+    - always
+  strict:                      # Require or disallow strict mode directives
+    - 2
+    - global
+
+  react/react-in-jsx-scope:    # Prevent missing React when using JSX
+    - off
