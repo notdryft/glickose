@@ -48,7 +48,11 @@ const rules = [{
 const plugins = [
   new webpack.DefinePlugin({
     DEVELOPMENT: JSON.stringify(DEVELOPMENT),
-    PRODUCTION: JSON.stringify(PRODUCTION)
+    PRODUCTION: JSON.stringify(PRODUCTION),
+    // Because fuck it
+    'process.env': {
+      NODE_ENV: `'${environment}'`
+    }
   })
 ];
 

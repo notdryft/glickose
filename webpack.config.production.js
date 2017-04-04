@@ -39,8 +39,7 @@ const plugins = [
   // Third party
   new ExtractTextPlugin('styles/app-[contenthash:12].min.css'),
   new HtmlWebpackPlugin({
-    template: './index.template.ejs',
-    favicon: 'src/images/favicon.ico'
+    template: './index.template.ejs'
   })
 ];
 
