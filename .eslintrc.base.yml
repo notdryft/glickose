@@ -20,7 +20,6 @@ plugins: [
 globals:
   DEVELOPMENT: false
   PRODUCTION: false
-  $: false
 
 rules:
   camelcase:                   # Enforce camelcase naming convention
