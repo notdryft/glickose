@@ -11,3 +11,8 @@ export const loadItems = () => dispatch => {
     payload: items
   });
 };
+
+export const updateItem = name => ({
+  type: 'UPDATE_ITEM',
+  payload: name
+});

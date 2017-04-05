@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 
 import {Items} from '../components/Items';
-import {loadItems} from '../actions/items';
+import {loadItems, updateItem} from '../actions/items';
 
 const mapStateToProps = state => ({
   items: state.items
@@ -10,6 +10,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   loadItems() {
     dispatch(loadItems());
+  },
+  updateItem(name) {
+    dispatch(updateItem(name));
   }
 });
 

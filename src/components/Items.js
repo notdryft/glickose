@@ -1,4 +1,7 @@
 import React, {Component, PropTypes} from 'react';
+import {Col} from 'react-bootstrap';
+
+import {Item} from './Item';
 
 export class Items extends Component {
 
@@ -11,23 +14,24 @@ export class Items extends Component {
   }
 
   render() {
-    const {items} = this.props;
+    const {items, updateItem} = this.props;
     if (!items) {
       return <p>Loading...</p>;
     }
 
-    const keys = Object.keys(items);
+    const sorted = items.sort((a,b) => a.get('rating') < b.get('rating'));
     return (
-      <ul>
-        {keys.map((item, index) =>
-          <li key={index}>{item}</li>
+      <Col xs={12} sm={8}>
+        {sorted.valueSeq().map((item, index) =>
+          <Item key={index} item={item} updateItem={updateItem}/>
         )}
-      </ul>
+      </Col>
     );
   }
 }
 
 Items.propTypes = {
   items: PropTypes.object,
-  loadItems: PropTypes.func.isRequired
+  loadItems: PropTypes.func.isRequired,
+  updateItem: PropTypes.func.isRequired
 };
