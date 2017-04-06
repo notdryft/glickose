@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Col} from 'react-bootstrap';
+import {ListGroup, Panel} from 'react-bootstrap';
 
 import {Item} from './Item';
 
@@ -9,29 +9,21 @@ export class Items extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.loadItems();
-  }
-
   render() {
-    const {items, updateItem} = this.props;
-    if (!items) {
-      return <p>Loading...</p>;
-    }
-
-    const sorted = items.sort((a,b) => a.get('rating') < b.get('rating'));
+    const {items} = this.props;
+    const sorted = items.sort((a, b) => a.get('rating') < b.get('rating'));
     return (
-      <Col xs={12} sm={8}>
-        {sorted.valueSeq().map((item, index) =>
-          <Item key={index} item={item} updateItem={updateItem}/>
-        )}
-      </Col>
+      <Panel>
+        <ListGroup fill>
+          {sorted.valueSeq().map((item, index) =>
+            <Item key={index} item={item}/>
+          )}
+        </ListGroup>
+      </Panel>
     );
   }
 }
 
 Items.propTypes = {
-  items: PropTypes.object,
-  loadItems: PropTypes.func.isRequired,
-  updateItem: PropTypes.func.isRequired
+  items: PropTypes.object
 };

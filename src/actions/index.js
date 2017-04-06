@@ -1,5 +1,10 @@
 export default {
 
+  Combination: {
+    Increment: 'INCREMENT_COMBINATION',
+    Set: 'SET_COMBINATION'
+  },
+
   Combinations: {
     Set: 'SET_COMBINATIONS'
   },

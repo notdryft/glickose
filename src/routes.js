@@ -1,14 +1,21 @@
 import React from 'react';
-import {Route, Switch} from 'react-router';
+import {Col} from 'react-bootstrap';
+import {Route} from 'react-router';
+import {Link} from 'react-router-dom';
 import {ConnectedRouter} from 'react-router-redux';
 
+import Combinations from './wrappers/Combinations';
 import Items from './wrappers/Items';
 
 export const routes = history => (
   <ConnectedRouter history={history}>
-    <Switch>
+    <Col xs={12} sm={8}>
+      <Link to="/items">Items</Link>
+      <Link to="/combinations">Combinations</Link>
+
       <Route exact path="/" component={Items}/>
-      <Route exact path="/items" component={Items}/>
-    </Switch>
+      <Route path="/items" component={Items}/>
+      <Route path="/combinations" component={Combinations}/>
+    </Col>
   </ConnectedRouter>
 );

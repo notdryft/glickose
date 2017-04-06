@@ -1,18 +1,13 @@
 import actions from './';
+import {setCombinations} from './combinations';
+
+export const setItems = items => ({
+  type: actions.Items.Set,
+  payload: items
+});
 
 export const loadItems = () => dispatch => {
   const items = require('../items.json'); // FIXME
-  dispatch({
-    type: actions.Items.Set,
-    payload: items
-  });
-  dispatch({
-    type: actions.Combinations.Set,
-    payload: items
-  });
+  dispatch(setCombinations(items));
+  dispatch(setItems(items));
 };
-
-export const updateItem = name => ({
-  type: 'UPDATE_ITEM',
-  payload: name
-});

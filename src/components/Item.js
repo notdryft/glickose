@@ -1,28 +1,22 @@
 import React, {Component, PropTypes} from 'react';
-import {Button, Label} from 'react-bootstrap';
+import {Label, ListGroupItem} from 'react-bootstrap';
 
 export class Item extends Component {
 
   constructor(props) {
     super(props);
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
   }
 
   render() {
-    const {item, updateItem} = this.props;
+    const {item} = this.props;
     return (
-      <Button block bsSize="large"
-              onClick={() => updateItem(item.get('name'))}>
+      <ListGroupItem>
         {item.get('name')} <Label>{item.get('rating')}</Label>
-      </Button>
+      </ListGroupItem>
     );
   }
 }
 
 Item.propTypes = {
-  item: PropTypes.object.isRequired,
-  updateItem: PropTypes.func.isRequired
+  item: PropTypes.object.isRequired
 };

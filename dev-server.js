@@ -7,6 +7,7 @@ const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
   hot: true,
   filename: config.output.filename,
+  historyApiFallback: true,
   publicPath: config.output.publicPath,
   stats: {
     colors: true
