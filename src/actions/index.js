@@ -10,7 +10,8 @@ export default {
   },
 
   Items: {
-    Set: 'SET_ITEMS'
+    Set: 'SET_ITEMS',
+    Update: 'UPDATE_ITEMS'
   },
 
   End: 'END'

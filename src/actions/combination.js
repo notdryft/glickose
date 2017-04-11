@@ -1,6 +1,6 @@
 import actions from './';
 
-export const incrementCombination = () => ({
+export const increment = () => ({
   type: actions.Combination.Increment
 });
 

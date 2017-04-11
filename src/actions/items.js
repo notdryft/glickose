@@ -11,3 +11,8 @@ export const loadItems = () => dispatch => {
   dispatch(setCombinations(items));
   dispatch(setItems(items));
 };
+
+export const updateItems = (items) => ({
+  type: actions.Items.Update,
+  payload: items
+});

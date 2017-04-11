@@ -1,8 +1,8 @@
 import {Record} from 'immutable';
 
-import constants from '../constants';
+import {Rating} from './Rating';
 
 export const Item = Record({
   name: '',
-  rating: constants.DefaultRating
+  rating: Rating()
 });

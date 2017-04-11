@@ -11,7 +11,7 @@ export class Item extends Component {
     const {item} = this.props;
     return (
       <ListGroupItem>
-        {item.get('name')} <Label>{item.get('rating')}</Label>
+        {item.get('name')} <Label>{item.get('rating').get('r').toFixed(0)}</Label>
       </ListGroupItem>
     );
   }

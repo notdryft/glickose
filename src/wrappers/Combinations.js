@@ -1,16 +1,19 @@
 import {connect} from 'react-redux';
 
-import {incrementCombination} from '../actions/combination';
+import {increment} from '../actions/combination';
+import {updateItems} from '../actions/items';
 import {Combinations} from '../components/Combinations';
 
 const mapStateToProps = state => ({
   combinations: state.combinations,
-  combination: state.combination
+  combination: state.combination,
+  items: state.items
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementCombination() {
-    dispatch(incrementCombination());
+  updateItems(items) {
+    dispatch(updateItems(items));
+    dispatch(increment());
   }
 });
 

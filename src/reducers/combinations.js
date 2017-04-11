@@ -2,19 +2,14 @@ import {List} from 'immutable';
 
 import actions from '../actions';
 
-import {Combination} from '../models/Combination';
-
 const combine = items => {
-  const combinations = [];
+  let combinations = List();
   for (let i = 0; i < items.length; i++) {
     for (let j = i + 1; j < items.length; j++) {
-      combinations.push(new Combination({
-        blue: items[i],
-        red: items[j]
-      }));
+      combinations = combinations.push(List.of(items[i], items[j]));
     }
   }
-  return List(combinations);
+  return combinations;
 };
 
 // Fisher-Yates shuffle

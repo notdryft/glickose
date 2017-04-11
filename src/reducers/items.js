@@ -11,16 +11,10 @@ export const items = (state = null, action) => {
         acc[name] = new Item({name});
         return acc;
       }, {}));
-    case 'UPDATE_ITEM':
-      if (state.has(action.payload)) {
-        const item = state.get(action.payload);
-        return state.set(
-          action.payload,
-          item.set('rating', item.get('rating') + 1)
-        );
-      }
-
-      return state;
+    case actions.Items.Update:
+      return action.payload.reduce((acc, item) => {
+        return acc.set(item.get('name'), item);
+      }, state);
     default:
       return state;
   }
