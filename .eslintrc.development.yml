@@ -3,3 +3,5 @@ extends: './.eslintrc.base.yml'
 rules:
   no-console:                  # Allow use of console
     - off
+  no-unused-vars:              # Disallow Unused Variables
+    - off

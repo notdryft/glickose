@@ -58,8 +58,6 @@ rules:
   }]
   no-undef:                    # Disallow Undeclared Variables
     - error
-  no-unused-vars:              # Disallow Unused Variables
-    - error
   no-var:                      # Require `let` or `const` instead of `var
     - error
   object-curly-spacing:        # Enforce consistent spacing inside braces
